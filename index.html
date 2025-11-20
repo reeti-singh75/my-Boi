@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reeti Singh - Single Page Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #F4F4F9; 
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+        .bg-navy { background-color: #000080; }
+        .text-cyan-accent { color: #00FFFF; }
+        .hover\:bg-cyan-accent:hover { background-color: #00FFFF; }
+        .hover\:text-navy:hover { color: #000080; }
+        
+        /* Style for the Contact Button to match the theme */
+        .btn-cyan {
+            background-color: #00FFFF;
+            color: #000080;
+            transition: all 0.3s;
+        }
+        .btn-cyan:hover {
+            background-color: #CCFFFF; /* Lighter cyan on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-light-bg text-gray-800">
+
+    <!-- Tailwind Configuration for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#000080',
+                        'cyan-accent': '#00FFFF',
+                        'light-bg': '#F4F4F9',
+                    }
+                }
+            }
+        }
+        
+        // Simple JS to handle mobile menu toggle (optional but good practice)
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const navLinks = document.getElementById('nav-links');
+            if (menuButton) {
+                menuButton.addEventListener('click', () => {
+                    navLinks.classList.toggle('hidden');
+                });
+            }
+        });
+
+    </script>
+
+    <!-- Navigation Bar (Nav-Blue) - Uses Anchor Links for Single Page -->
+    <header class="bg-navy shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-white">
+                <h1 class="text-3xl font-bold tracking-widest">REETI SINGH</h1>
+                <p class="text-sm font-light text-cyan-accent">FRONT-END DEVELOPER</p>
+            </div>
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex space-x-6">
+                <!-- Links now point to IDs within the same file -->
+                <a href="#home" class="text-cyan-accent font-semibold hover:text-white transition duration-300">HOME</a>
+                <a href="#projects" class="text-white font-semibold hover:text-cyan-accent transition duration-300">PROJECTS</a>
+                <a href="#skills" class="text-white font-semibold hover:text-cyan-accent transition duration-300">SKILLS</a>
+                <a href="#contact" class="text-white font-semibold hover:text-cyan-accent transition duration-300">CONTACT</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Navigation Links (Hidden by default) -->
+        <nav id="nav-links" class="hidden md:hidden bg-navy/90 text-center pb-2">
+            <a href="#home" class="block py-2 text-white hover:bg-cyan-accent hover:text-navy transition duration-300">HOME</a>
+            <a href="#projects" class="block py-2 text-white hover:bg-cyan-accent hover:text-navy transition duration-300">PROJECTS</a>
+            <a href="#skills" class="block py-2 text-white hover:bg-cyan-accent hover:text-navy transition duration-300">SKILLS</a>
+            <a href="#contact" class="block py-2 text-white hover:bg-cyan-accent hover:text-navy transition duration-300">CONTACT</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        
+        <!-- ==================================================================== -->
+        <!-- 1. HOME / HERO SECTION (ID: home) -->
+        <!-- ==================================================================== -->
+        <section id="home" class="pt-8 mb-20">
+            <h2 class="sr-only">Home Section</h2>
+            <div class="text-center bg-white p-10 md:p-20 rounded-xl shadow-2xl transition duration-500 hover:shadow-3xl">
+                <p class="text-4xl sm:text-5xl font-extrabold text-navy mb-4">
+                    Hello, I'm Reeti Singh.
+                </p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+                    As an aspiring **FRONT-END DEVELOPER**, I transform conceptual designs into fully responsive, dynamic, and intuitive web interfaces. My focus is on creating seamless user experiences using modern web technologies like HTML5, CSS3, and JavaScript. I am passionate about clean code and continuous learning.
+                </p>
+                
+                <!-- Call-to-Action Button linking directly to projects section -->
+                <a href="#projects" class="inline-block px-10 py-4 text-lg font-bold rounded-full text-navy bg-cyan-accent shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-cyan-accent focus:ring-opacity-50 border-2 border-cyan-accent">
+                    VIEW MY PROJECTS <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                
+                <!-- Quick Links (Social Icons) -->
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-gray-500 hover:text-navy transition duration-300 transform hover:scale-110" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin fa-3x"></i>
+                    </a>
+                    <a href="https://github.com/reeti-singh75/portfolio-website" target="_blank" class="text-gray-500 hover:text-navy transition duration-300 transform hover:scale-110" aria-label="GitHub Profile">
+                        <i class="fab fa-github fa-3x"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="h-1 bg-gray-300 my-16 rounded-full"></div>
+
+        <!-- ==================================================================== -->
+        <!-- 2. PROJECTS SECTION (ID: projects) -->
+        <!-- ==================================================================== -->
+        <section id="projects" class="pt-20 mb-20">
+            
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white bg-navy p-4 rounded-lg shadow-xl mb-10 text-center">
+                My Portfolio Projects
+            </h2>
+
+            <!-- Projects Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project Card 1: Task Management -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] hover:shadow-2xl border-b-4 border-cyan-accent">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy mb-2">
+                            <a href="https://github.com/reeti-singh75/portfolio-website" target="_blank" class="hover:text-cyan-accent transition duration-300 flex items-center">
+                                Task Management & To-Do App 
+                                <i class="fab fa-github ml-2 text-xl"></i>
+                            </a>
+                        </h3>
+                        <p class="text-gray-500 mb-4 text-sm">Web Application</p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Implemented CRUD operations (Create, Read, Update, Delete) for tasks, focusing on efficient **Local Storage** management for persistent data. Designed a clean, responsive interface.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: E-commerce Mockup -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] hover:shadow-2xl border-b-4 border-cyan-accent">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy mb-2">
+                            <a href="https://github.com/reeti-singh75/portfolio-website" target="_blank" class="hover:text-cyan-accent transition duration-300 flex items-center">
+                                Responsive E-commerce Mockup
+                                <i class="fab fa-github ml-2 text-xl"></i>
+                            </a>
+                        </h3>
+                        <p class="text-gray-500 mb-4 text-sm">UI/UX Practice</p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Developed a fully responsive product listing page and shopping cart interface using pure CSS Grid/Flexbox. Focused on accessibility and fast load times across all devices.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Basic REST API Dashboard -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] hover:shadow-2xl border-b-4 border-cyan-accent">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-navy mb-2">
+                            <a href="https://github.com/reeti-singh75/portfolio-website" target="_blank" class="hover:text-cyan-accent transition duration-300 flex items-center">
+                                REST API Data Visualizer
+                                <i class="fab fa-github ml-2 text-xl"></i>
+                            </a>
+                        </h3>
+                        <p class="text-gray-500 mb-4 text-sm">Data Fetching</p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Integrated a public dummy REST API to fetch and display data in a tabular format. Utilized JavaScript **Fetch API** for asynchronous data handling and display.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <div class="h-1 bg-gray-300 my-16 rounded-full"></div>
+
+        <!-- ==================================================================== -->
+        <!-- 3. SKILLS & EXPERIENCE SECTION (ID: skills) -->
+        <!-- ==================================================================== -->
+        <section id="skills" class="pt-20 mb-20">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white bg-navy p-4 rounded-lg shadow-xl mb-10 text-center">
+                Technical Skills & Experience
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                
+                <!-- Left Column: Technical Skills (2 Columns) -->
+                <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
+                    
+                    <h3 class="text-2xl font-bold text-navy border-b-2 border-cyan-accent pb-2 mb-6">TECHNICAL SKILLS</h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                        <!-- Core Languages -->
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-700 mb-2 flex items-center"><i class="fas fa-code text-cyan-accent mr-2"></i> Core Languages</h4>
+                            <ul class="space-y-1 text-gray-600 list-disc list-inside ml-4">
+                                <li>HTML5 (Semantic Markup)</li>
+                                <li>CSS3 (Flexbox & Grid)</li>
+                                <li>JavaScript (ES6+)</li>
+                                <li>Responsive Web Design</li>
+                            </ul>
+                        </div>
+
+                        <!-- Tools & Platforms -->
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-700 mb-2 flex items-center"><i class="fas fa-toolbox text-cyan-accent mr-2"></i> Tools & Platforms</h4>
+                            <ul class="space-y-1 text-gray-600 list-disc list-inside ml-4">
+                                <li>Git & GitHub (Version Control)</li>
+                                <li>Visual Studio Code</li>
+                                <li>Chrome DevTools</li>
+                                <li>Tailwind CSS / Bootstrap</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Web Technologies -->
+                    <div class="mt-8">
+                        <h4 class="text-xl font-semibold text-gray-700 mb-2 flex items-center"><i class="fas fa-laptop-code text-cyan-accent mr-2"></i> Web Technologies & Principles</h4>
+                        <ul class="space-y-1 text-gray-600 list-disc list-inside ml-4">
+                            <li>DOM Manipulation & Event Handling</li>
+                            <li>REST API Integration (Basic)</li>
+                            <li>UI/UX Principles (Wireframing, Usability)</li>
+                            <li>Performance Optimization (Basic)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Experience -->
+                <div class="lg:col-span-1 bg-white p-6 rounded-xl shadow-lg">
+                    
+                    <h3 class="text-2xl font-bold text-navy border-b-2 border-cyan-accent pb-2 mb-6">PROFESSIONAL EXPERIENCE</h3>
+
+                    <!-- Experience 1: School Discipline Coordinator -->
+                    <div class="mb-6 border-l-4 border-navy pl-4">
+                        <h4 class="text-xl font-semibold text-navy">School Discipline Coordinator</h4>
+                        <p class="text-sm text-gray-500 mb-2">St. Xavier School | 2021 - Present</p>
+                        <ul class="text-gray-700 text-sm list-disc list-inside space-y-1">
+                            <li>Managed student behavioral records and coordinated with staff and parents.</li>
+                            <li>Developed and implemented disciplinary guidelines to maintain a conducive learning environment.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Experience 2: Facility Coordinator -->
+                    <div class="mb-6 border-l-4 border-navy pl-4">
+                        <h4 class="text-xl font-semibold text-navy">Facility Coordinator</h4>
+                        <p class="text-sm text-gray-500 mb-2">XYZ Organization | 2019 - 2021</p>
+                        <ul class="text-gray-700 text-sm list-disc list-inside space-y-1">
+                            <li>Oversaw daily operations and maintenance schedules for the facility.</li>
+                            <li>Coordinated vendor services and managed inventory, ensuring smooth workflow.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <div class="h-1 bg-gray-300 my-16 rounded-full"></div>
+        
+        <!-- ==================================================================== -->
+        <!-- 4. CONTACT SECTION (ID: contact) -->
+        <!-- ==================================================================== -->
+        <section id="contact" class="pt-20 pb-10">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white bg-navy p-4 rounded-lg shadow-xl mb-10 text-center">
+                    Get In Touch
+                </h2>
+
+                <div class="bg-white p-8 md:p-10 rounded-xl shadow-2xl">
+                    
+                    <!-- Direct Contact Info -->
+                    <div class="mb-10 text-center">
+                        <h3 class="text-2xl font-bold text-navy mb-4">Direct Information</h3>
+                        <div class="space-y-3 text-lg text-gray-700">
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-envelope text-cyan-accent mr-3 text-xl"></i> 
+                                Email: <span class="font-semibold ml-2">reeti6637@gmail.com</span>
+                            </p>
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-phone-alt text-cyan-accent mr-3 text-xl"></i> 
+                                Phone: <span class="font-semibold ml-2">+91-83059867158</span>
+                            </p>
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-cyan-accent mr-3 text-xl"></i> 
+                                Location: <span class="font-semibold ml-2">Jashpur, Chhattisgarh, India</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="h-px bg-gray-200 my-8"></div>
+
+                    <!-- Contact Form -->
+                    <h3 class="text-2xl font-bold text-navy mb-6 text-center">Send Me a Message</h3>
+                    <form action="#" method="POST" class="space-y-6">
+                        
+                        <!-- Name Field -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-cyan-accent focus:border-cyan-accent transition duration-200" placeholder="Your Full Name">
+                        </div>
+
+                        <!-- Email Field -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-cyan-accent focus:border-cyan-accent transition duration-200" placeholder="your.email@example.com">
+                        </div>
+
+                        <!-- Message Field -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-cyan-accent focus:border-cyan-accent transition duration-200" placeholder="How can I help you?"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-4 text-center">
+                            <button type="submit" class="btn-cyan px-8 py-3 text-lg font-bold rounded-full shadow-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-accent focus:ring-opacity-50">
+                                SEND MESSAGE <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Nav-Blue) -->
+    <footer class="bg-navy text-white mt-16 p-6 text-center shadow-inner">
+        <p class="text-sm">
+            &copy; 2024 Reeti Singh | Single Page Portfolio | Designed with <span class="text-cyan-accent">Navy</span> and <span class="text-cyan-accent">Cyan</span>
+        </p>
+    </footer>
+
+</body>
+</html>
